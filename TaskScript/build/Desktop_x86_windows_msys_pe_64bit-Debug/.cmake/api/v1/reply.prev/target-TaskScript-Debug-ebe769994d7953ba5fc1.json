@@ -78,13 +78,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 67,
+				"line" : 71,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 50,
+				"line" : 54,
 				"parent" : 0
 			},
 			{
@@ -403,7 +403,9 @@
 				1,
 				2,
 				6,
-				8
+				8,
+				10,
+				12
 			]
 		}
 	],
@@ -528,7 +530,9 @@
 				1,
 				2,
 				6,
-				8
+				8,
+				10,
+				12
 			]
 		},
 		{
@@ -539,7 +543,9 @@
 				5,
 				7,
 				9,
-				10
+				11,
+				13,
+				14
 			]
 		},
 		{
@@ -553,14 +559,14 @@
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				11
+				15
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				12
+				16
 			]
 		}
 	],
@@ -620,6 +626,28 @@
 		{
 			"backtrace" : 4,
 			"path" : "lexicalanalyzer.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "lexicalanalyzer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "syntaxanalyzer.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "syntaxanalyzer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "reportgenerator.h",
 			"sourceGroupIndex" : 1
 		},
 		{

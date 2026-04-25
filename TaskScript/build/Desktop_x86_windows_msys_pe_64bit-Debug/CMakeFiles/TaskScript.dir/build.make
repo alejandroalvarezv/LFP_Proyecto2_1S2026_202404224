@@ -165,6 +165,36 @@ CMakeFiles/TaskScript.dir/lexicalanalyzer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TaskScript.dir/lexicalanalyzer.cpp.s"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\aleja\Documents\Proyecto2 Lenguajes\TaskScript\lexicalanalyzer.cpp" -o CMakeFiles\TaskScript.dir\lexicalanalyzer.cpp.s
 
+CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.obj: CMakeFiles/TaskScript.dir/flags.make
+CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.obj: CMakeFiles/TaskScript.dir/includes_CXX.rsp
+CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.obj: C:/Users/aleja/Documents/Proyecto2\ Lenguajes/TaskScript/syntaxanalyzer.cpp
+CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.obj: CMakeFiles/TaskScript.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\aleja\Documents\Proyecto2 Lenguajes\TaskScript\build\Desktop_x86_windows_msys_pe_64bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.obj -MF CMakeFiles\TaskScript.dir\syntaxanalyzer.cpp.obj.d -o CMakeFiles\TaskScript.dir\syntaxanalyzer.cpp.obj -c "C:\Users\aleja\Documents\Proyecto2 Lenguajes\TaskScript\syntaxanalyzer.cpp"
+
+CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\aleja\Documents\Proyecto2 Lenguajes\TaskScript\syntaxanalyzer.cpp" > CMakeFiles\TaskScript.dir\syntaxanalyzer.cpp.i
+
+CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\aleja\Documents\Proyecto2 Lenguajes\TaskScript\syntaxanalyzer.cpp" -o CMakeFiles\TaskScript.dir\syntaxanalyzer.cpp.s
+
+CMakeFiles/TaskScript.dir/reportgenerator.cpp.obj: CMakeFiles/TaskScript.dir/flags.make
+CMakeFiles/TaskScript.dir/reportgenerator.cpp.obj: CMakeFiles/TaskScript.dir/includes_CXX.rsp
+CMakeFiles/TaskScript.dir/reportgenerator.cpp.obj: C:/Users/aleja/Documents/Proyecto2\ Lenguajes/TaskScript/reportgenerator.cpp
+CMakeFiles/TaskScript.dir/reportgenerator.cpp.obj: CMakeFiles/TaskScript.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\aleja\Documents\Proyecto2 Lenguajes\TaskScript\build\Desktop_x86_windows_msys_pe_64bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TaskScript.dir/reportgenerator.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TaskScript.dir/reportgenerator.cpp.obj -MF CMakeFiles\TaskScript.dir\reportgenerator.cpp.obj.d -o CMakeFiles\TaskScript.dir\reportgenerator.cpp.obj -c "C:\Users\aleja\Documents\Proyecto2 Lenguajes\TaskScript\reportgenerator.cpp"
+
+CMakeFiles/TaskScript.dir/reportgenerator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TaskScript.dir/reportgenerator.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\aleja\Documents\Proyecto2 Lenguajes\TaskScript\reportgenerator.cpp" > CMakeFiles\TaskScript.dir\reportgenerator.cpp.i
+
+CMakeFiles/TaskScript.dir/reportgenerator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TaskScript.dir/reportgenerator.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\aleja\Documents\Proyecto2 Lenguajes\TaskScript\reportgenerator.cpp" -o CMakeFiles\TaskScript.dir\reportgenerator.cpp.s
+
 # Object files for target TaskScript
 TaskScript_OBJECTS = \
 "CMakeFiles/TaskScript.dir/TaskScript_autogen/mocs_compilation.cpp.obj" \
@@ -172,7 +202,9 @@ TaskScript_OBJECTS = \
 "CMakeFiles/TaskScript.dir/mainwindow.cpp.obj" \
 "CMakeFiles/TaskScript.dir/token.cpp.obj" \
 "CMakeFiles/TaskScript.dir/errormanager.cpp.obj" \
-"CMakeFiles/TaskScript.dir/lexicalanalyzer.cpp.obj"
+"CMakeFiles/TaskScript.dir/lexicalanalyzer.cpp.obj" \
+"CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.obj" \
+"CMakeFiles/TaskScript.dir/reportgenerator.cpp.obj"
 
 # External object files for target TaskScript
 TaskScript_EXTERNAL_OBJECTS =
@@ -183,6 +215,8 @@ TaskScript.exe: CMakeFiles/TaskScript.dir/mainwindow.cpp.obj
 TaskScript.exe: CMakeFiles/TaskScript.dir/token.cpp.obj
 TaskScript.exe: CMakeFiles/TaskScript.dir/errormanager.cpp.obj
 TaskScript.exe: CMakeFiles/TaskScript.dir/lexicalanalyzer.cpp.obj
+TaskScript.exe: CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.obj
+TaskScript.exe: CMakeFiles/TaskScript.dir/reportgenerator.cpp.obj
 TaskScript.exe: CMakeFiles/TaskScript.dir/build.make
 TaskScript.exe: C:/Qt/6.11.0/mingw_64/lib/libQt6Widgets.a
 TaskScript.exe: C:/Qt/6.11.0/mingw_64/lib/libQt6Gui.a
@@ -191,7 +225,7 @@ TaskScript.exe: C:/Qt/6.11.0/mingw_64/lib/libQt6EntryPoint.a
 TaskScript.exe: CMakeFiles/TaskScript.dir/linkLibs.rsp
 TaskScript.exe: CMakeFiles/TaskScript.dir/objects1.rsp
 TaskScript.exe: CMakeFiles/TaskScript.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\aleja\Documents\Proyecto2 Lenguajes\TaskScript\build\Desktop_x86_windows_msys_pe_64bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable TaskScript.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\aleja\Documents\Proyecto2 Lenguajes\TaskScript\build\Desktop_x86_windows_msys_pe_64bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable TaskScript.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\TaskScript.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

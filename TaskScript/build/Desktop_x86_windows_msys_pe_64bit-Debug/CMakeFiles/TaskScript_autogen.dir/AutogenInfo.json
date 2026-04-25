@@ -353,6 +353,18 @@
 			null
 		],
 		[
+			"C:/Users/aleja/Documents/Proyecto2 Lenguajes/TaskScript/reportgenerator.h",
+			"MU",
+			"EWIEGA46WW/moc_reportgenerator.cpp",
+			null
+		],
+		[
+			"C:/Users/aleja/Documents/Proyecto2 Lenguajes/TaskScript/syntaxanalyzer.h",
+			"MU",
+			"EWIEGA46WW/moc_syntaxanalyzer.cpp",
+			null
+		],
+		[
 			"C:/Users/aleja/Documents/Proyecto2 Lenguajes/TaskScript/token.h",
 			"MU",
 			"EWIEGA46WW/moc_token.cpp",
@@ -448,6 +460,16 @@
 		],
 		[
 			"C:/Users/aleja/Documents/Proyecto2 Lenguajes/TaskScript/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/aleja/Documents/Proyecto2 Lenguajes/TaskScript/reportgenerator.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/aleja/Documents/Proyecto2 Lenguajes/TaskScript/syntaxanalyzer.cpp",
 			"MU",
 			null
 		],

@@ -29,6 +29,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         errormanager.cpp
         lexicalanalyzer.h
         lexicalanalyzer.cpp
+        syntaxanalyzer.h
+        syntaxanalyzer.cpp
+        reportgenerator.h
+        reportgenerator.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET TaskScript APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

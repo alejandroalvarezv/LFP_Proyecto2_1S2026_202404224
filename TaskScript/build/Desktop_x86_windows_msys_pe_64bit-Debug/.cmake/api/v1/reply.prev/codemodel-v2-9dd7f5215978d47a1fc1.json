@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-abb035f712fe99377285.json",
+					"jsonFile" : "directory-.-Debug-fbd4bd46c2177b5e7fe7.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "TaskScript::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-TaskScript-Debug-7c58565083f0dc701b62.json",
+					"jsonFile" : "target-TaskScript-Debug-ebe769994d7953ba5fc1.json",
 					"name" : "TaskScript",
 					"projectIndex" : 0
 				},

@@ -14,6 +14,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/aleja/Documents/Proyecto2 Lenguajes/TaskScript/lexicalanalyzer.cpp" "CMakeFiles/TaskScript.dir/lexicalanalyzer.cpp.obj" "gcc" "CMakeFiles/TaskScript.dir/lexicalanalyzer.cpp.obj.d"
   "C:/Users/aleja/Documents/Proyecto2 Lenguajes/TaskScript/main.cpp" "CMakeFiles/TaskScript.dir/main.cpp.obj" "gcc" "CMakeFiles/TaskScript.dir/main.cpp.obj.d"
   "C:/Users/aleja/Documents/Proyecto2 Lenguajes/TaskScript/mainwindow.cpp" "CMakeFiles/TaskScript.dir/mainwindow.cpp.obj" "gcc" "CMakeFiles/TaskScript.dir/mainwindow.cpp.obj.d"
+  "C:/Users/aleja/Documents/Proyecto2 Lenguajes/TaskScript/reportgenerator.cpp" "CMakeFiles/TaskScript.dir/reportgenerator.cpp.obj" "gcc" "CMakeFiles/TaskScript.dir/reportgenerator.cpp.obj.d"
+  "C:/Users/aleja/Documents/Proyecto2 Lenguajes/TaskScript/syntaxanalyzer.cpp" "CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.obj" "gcc" "CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.obj.d"
   "C:/Users/aleja/Documents/Proyecto2 Lenguajes/TaskScript/token.cpp" "CMakeFiles/TaskScript.dir/token.cpp.obj" "gcc" "CMakeFiles/TaskScript.dir/token.cpp.obj.d"
   )
 

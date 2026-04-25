@@ -319,6 +319,54 @@ mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TaskScript.dir\build.make CMakeFiles/TaskScript.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
+reportgenerator.obj: reportgenerator.cpp.obj
+.PHONY : reportgenerator.obj
+
+# target to build an object file
+reportgenerator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TaskScript.dir\build.make CMakeFiles/TaskScript.dir/reportgenerator.cpp.obj
+.PHONY : reportgenerator.cpp.obj
+
+reportgenerator.i: reportgenerator.cpp.i
+.PHONY : reportgenerator.i
+
+# target to preprocess a source file
+reportgenerator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TaskScript.dir\build.make CMakeFiles/TaskScript.dir/reportgenerator.cpp.i
+.PHONY : reportgenerator.cpp.i
+
+reportgenerator.s: reportgenerator.cpp.s
+.PHONY : reportgenerator.s
+
+# target to generate assembly for a file
+reportgenerator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TaskScript.dir\build.make CMakeFiles/TaskScript.dir/reportgenerator.cpp.s
+.PHONY : reportgenerator.cpp.s
+
+syntaxanalyzer.obj: syntaxanalyzer.cpp.obj
+.PHONY : syntaxanalyzer.obj
+
+# target to build an object file
+syntaxanalyzer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TaskScript.dir\build.make CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.obj
+.PHONY : syntaxanalyzer.cpp.obj
+
+syntaxanalyzer.i: syntaxanalyzer.cpp.i
+.PHONY : syntaxanalyzer.i
+
+# target to preprocess a source file
+syntaxanalyzer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TaskScript.dir\build.make CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.i
+.PHONY : syntaxanalyzer.cpp.i
+
+syntaxanalyzer.s: syntaxanalyzer.cpp.s
+.PHONY : syntaxanalyzer.s
+
+# target to generate assembly for a file
+syntaxanalyzer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TaskScript.dir\build.make CMakeFiles/TaskScript.dir/syntaxanalyzer.cpp.s
+.PHONY : syntaxanalyzer.cpp.s
+
 token.obj: token.cpp.obj
 .PHONY : token.obj
 
@@ -373,6 +421,12 @@ help:
 	@echo ... mainwindow.obj
 	@echo ... mainwindow.i
 	@echo ... mainwindow.s
+	@echo ... reportgenerator.obj
+	@echo ... reportgenerator.i
+	@echo ... reportgenerator.s
+	@echo ... syntaxanalyzer.obj
+	@echo ... syntaxanalyzer.i
+	@echo ... syntaxanalyzer.s
 	@echo ... token.obj
 	@echo ... token.i
 	@echo ... token.s
