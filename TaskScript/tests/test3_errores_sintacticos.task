@@ -1,0 +1,5 @@
+TABLERO "Proyecto Sin Errores" {
+    COLUMNA "Por Hacer" {
+        tarea: "Tarea incompleta" [prioridad: ALTA, responsable: "Luis"
+    };
+};

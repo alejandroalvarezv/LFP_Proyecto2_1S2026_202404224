@@ -1,0 +1,9 @@
+TABLERO "Proyecto Errores" {
+    COLUMNA "Por Hacer" {
+        tarea: "Tarea uno" [prioridad: ALTA, responsable: "Jorge",
+            fecha_limite: 2026-05-01],
+        $ 
+        tarea: "Tarea dos" [prioridad: MEDIA, responsable: "Ana",
+            fecha_limite: 2026-05-10]
+    };
+};
