@@ -64,7 +64,7 @@ void MainWindow::setupUI() {
     // ── Label de estado ──
     lblEstado = new QLabel("Carga un archivo .task para comenzar.");
     lblEstado->setStyleSheet("padding: 6px; background: #ecf0f1; border-radius: 4px;");
-    mainLayout->addWidget(lblEstado);
+    lblEstado->setMaximumHeight(35);
 
     // ── Splitter: editor | tabs ──
     QSplitter* splitter = new QSplitter(Qt::Horizontal);
