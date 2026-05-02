@@ -1,6 +1,6 @@
-TABLERO "Proyecto Cadena" {
-    COLUMNA "Por Hacer" {
-        tarea: "Tarea sin cerrar [prioridad: ALTA, responsable: "Jorge",
-            fecha_limite: 2026-05-01]
+TABLERO "Proyecto Minimo" {
+    COLUMNA "Unica Columna" {
+        tarea: "Unica tarea" [prioridad: BAJA, responsable: "Solo",
+            fecha_limite: 2026-12-31]
     };
 };
