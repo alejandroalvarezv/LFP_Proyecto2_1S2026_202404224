@@ -23,7 +23,6 @@ void MainWindow::setupUI() {
     setCentralWidget(central);
     QVBoxLayout* mainLayout = new QVBoxLayout(central);
 
-    // ── Barra de botones superior ──
     QHBoxLayout* btnLayout = new QHBoxLayout();
 
     btnCargar   = new QPushButton("📂 Cargar Archivo .task");
@@ -161,17 +160,26 @@ void MainWindow::analizarArchivo() {
     llenarTablaErrores(errorManager);
 
     // Generar reportes
+    // Generar reportes
     ReportGenerator generator(parser.getTablero(), tokens, errorManager, parser.getArbol());
-    generator.generarReporte1((outputDir + "reporte1_kanban.html").toStdString());
-    generator.generarReporte2((outputDir + "reporte2_responsable.html").toStdString());
-    generator.generarReporte3((outputDir + "reporte3_tokens.html").toStdString());
-    generator.generarGraphviz((outputDir + "arbol.dot").toStdString());
 
-    // Habilitar botones de reportes
-    btnReporte1->setEnabled(true);
-    btnReporte2->setEnabled(true);
+    // Reporte 3 siempre se genera
+    generator.generarReporte3((outputDir + "reporte3_tokens.html").toStdString());
     btnReporte3->setEnabled(true);
-    btnGraphviz->setEnabled(true);
+
+    // Reportes 1, 2 y Graphviz solo si no hay errores
+    if (!errorManager.hayErrores()) {
+        generator.generarReporte1((outputDir + "reporte1_kanban.html").toStdString());
+        generator.generarReporte2((outputDir + "reporte2_responsable.html").toStdString());
+        generator.generarGraphviz((outputDir + "arbol.dot").toStdString());
+        btnReporte1->setEnabled(true);
+        btnReporte2->setEnabled(true);
+        btnGraphviz->setEnabled(true);
+    } else {
+        btnReporte1->setEnabled(false);
+        btnReporte2->setEnabled(false);
+        btnGraphviz->setEnabled(false);
+    }
 
     if (exito) {
         setEstado("Analisis exitoso. Reportes generados en: " + outputDir, "#27ae60");

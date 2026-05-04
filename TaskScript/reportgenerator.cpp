@@ -40,6 +40,16 @@ std::string ReportGenerator::tokenTypeToString(TokenType type) {
     }
 }
 
+// ── Helper para escapar comillas en etiquetas Graphviz ──
+std::string escaparLabel(const std::string& texto) {
+    std::string resultado = "";
+    for (char c : texto) {
+        if (c == '"') resultado += "\\\"";
+        else resultado += c;
+    }
+    return resultado;
+}
+
 // REPORTE 1 - Tablero Kanban Visual
 void ReportGenerator::generarReporte1(const std::string& outputPath) {
     std::ostringstream html;
@@ -86,7 +96,6 @@ h1{color:#2c3e50;text-align:center;}
 
 // REPORTE 2 - Carga por Responsable
 void ReportGenerator::generarReporte2(const std::string& outputPath) {
-    // Contar tareas por responsable
     std::map<std::string, std::map<std::string,int>> carga;
     int totalTareas = 0;
 
@@ -119,6 +128,7 @@ tr:hover{background:#f7fafc;}
          << "<th class='media'>Media</th><th class='baja'>Baja</th><th>Distribucion</th></tr>";
 
     for (const auto& entry : carga) {
+        if (entry.first.empty()) continue; // ← evita fila vacia
         int alta  = entry.second.count("ALTA")  ? entry.second.at("ALTA")  : 0;
         int media = entry.second.count("MEDIA") ? entry.second.at("MEDIA") : 0;
         int baja  = entry.second.count("BAJA")  ? entry.second.at("BAJA")  : 0;
@@ -153,10 +163,8 @@ th{background:#2E75B6;color:white;padding:10px;}
 td{padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;}
 tr:hover{background:#f7fafc;}
 .error{color:#e74c3c;font-weight:bold;}
-.critico{color:#8e44ad;font-weight:bold;}
 </style></head><body><div class='container'>)";
 
-    // Tabla de tokens
     html << "<h2>Tabla de Tokens</h2><table>"
          << "<tr><th>#</th><th>Lexema</th><th>Tipo</th><th>Linea</th><th>Columna</th></tr>";
 
@@ -170,7 +178,6 @@ tr:hover{background:#f7fafc;}
     }
     html << "</table>";
 
-    // Tabla de errores
     html << "<h2>Tabla de Errores</h2><table>"
          << "<tr><th>#</th><th>Lexema</th><th>Tipo</th><th>Descripcion</th><th>Linea</th><th>Columna</th></tr>";
 
@@ -199,11 +206,11 @@ void ReportGenerator::generarNodosGraphviz(NodoArbol* nodo, int& contador, std::
     int id = contador++;
 
     if (nodo->esTerminal) {
-        resultado += "n" + std::to_string(id) + " [label=\"" + nodo->etiqueta
-                     + "\", fillcolor=\"#D6EAF8\", style=filled];\n";
+        resultado += "n" + std::to_string(id) + " [label=\"" + escaparLabel(nodo->etiqueta)
+        + "\", fillcolor=\"#D6EAF8\", style=filled];\n";
     } else {
-        resultado += "n" + std::to_string(id) + " [label=\"" + nodo->etiqueta
-                     + "\", fillcolor=\"#2E75B6\", fontcolor=white, style=filled];\n";
+        resultado += "n" + std::to_string(id) + " [label=\"" + escaparLabel(nodo->etiqueta)
+        + "\", fillcolor=\"#2E75B6\", fontcolor=white, style=filled];\n";
     }
 
     for (auto hijo : nodo->hijos) {

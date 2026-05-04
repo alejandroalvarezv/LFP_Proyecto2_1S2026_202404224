@@ -41,7 +41,6 @@ TokenType LexicalAnalyzer::checkKeyword(const std::string& word) {
 }
 
 bool LexicalAnalyzer::isDateFormat(const std::string& text) {
-    // Formato AAAA-MM-DD
     if (text.size() != 10) return false;
     for (int i = 0; i < 10; i++) {
         if (i == 4 || i == 7) {
@@ -50,6 +49,10 @@ bool LexicalAnalyzer::isDateFormat(const std::string& text) {
             if (!isdigit(text[i])) return false;
         }
     }
+     int mes = std::stoi(text.substr(5, 2));
+    int dia = std::stoi(text.substr(8, 2));
+    if (mes < 1 || mes > 12) return false;
+    if (dia < 1 || dia > 31) return false;
     return true;
 }
 
@@ -69,7 +72,7 @@ Token LexicalAnalyzer::readString() {
     }
 
     if (currentChar() == '"') {
-        advance(); // saltar la comilla final
+        advance();
         return Token(TokenType::CADENA, result, startLine, startCol);
     }
 
@@ -83,17 +86,25 @@ Token LexicalAnalyzer::readNumberOrDate() {
     std::string result = "";
 
     while (pos < (int)source.size() && (isdigit(currentChar()) || currentChar() == '-')) {
-        // Evitar que consuma el - como parte del numero si no es fecha
         if (currentChar() == '-' && result.size() != 4 && result.size() != 7)
             break;
         result += currentChar();
         advance();
     }
 
-    if (isDateFormat(result))
-        return Token(TokenType::FECHA, result, startLine, startCol);
+    // Tiene estructura de fecha AAAA-MM-DD
+    if (result.size() == 10 && result[4] == '-' && result[7] == '-') {
+        if (isDateFormat(result)) {
+            return Token(TokenType::FECHA, result, startLine, startCol);
+        } else {
+            errorManager.agregarError(result, ErrorType::LEXICO,
+                                      "Fecha con valores invalidos (mes 01-12, dia 01-31): " + result,
+                                      startLine, startCol);
+            return Token(TokenType::ERROR_TOKEN, result, startLine, startCol);
+        }
+    }
 
-    // Si tiene guion pero no es fecha valida, solo tomar los digitos
+    // Es un numero entero
     std::string numStr = "";
     for (char c : result) if (isdigit(c)) numStr += c;
     return Token(TokenType::ENTERO, numStr, startLine, startCol);

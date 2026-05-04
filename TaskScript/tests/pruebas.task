@@ -1,6 +1,37 @@
-TABLERO "Proyecto Minimo" {
-    COLUMNA "Unica Columna" {
-        tarea: "Unica tarea" [prioridad: BAJA, responsable: "Solo",
-            fecha_limite: 2026-12-31]
+TABLERO "Proyecto Software 2026" {
+
+    COLUMNA "Por Hacer" {
+        tarea: "Diseñar base de datos" [prioridad: ALTA, responsable: "Carlos", fecha_limite: 2026-05-15],
+        tarea: "Definir requerimientos" [prioridad: ALTA, responsable: "María", fecha_limite: 2026-05-10],
+        tarea: "Crear mockups" [prioridad MEDIA, responsable: "Luis", fecha_limite: 2026-05-12],
     };
+
+    COLUMNA "En Análisis" {
+        tarea: "Revisar documentación" [prioridad: MEDIA, responsable: "Ana", fecha_limite: 2026-13-05],
+        tarea: "Estudiar competencia" [prioridad: BAJA, responsable: "Pedro", fecha_limite: 2026-05-20],
+        tarea: "Validar flujos" [prioridad: ALTA, responsable: "Jorge" fecha_limite: 2026-05-18],
+        tarea: "Casos de uso" [prioridad: EXTREMA, responsable: "María", fecha_limite: 2026-05-22],
+    };
+
+    COLUMNA "En Progreso" {
+        tarea: "Implementar login" [prioridad: ALTA, responsable: "Carlos", fecha_limite: 2026-05-25],
+        tarea: "Módulo de reportes" [prioridad: MEDIA, responsable: "Tarea sin cerrar, fecha_limite: 2026-05-28],
+        tarea: "API REST" [prioridad: BAJA, responsable: "Luis", fecha_limite: 2026-05-30],
+        tarea: "Pruebas unitarias" [prioridad: MEDIA, responsable: "Ana", fecha_limite: 2026-06-01]
+    };
+
+    COLUMNA "En Revisión" {
+        tarea: "Code review módulo auth" [prioridad: ALTA, responsable: "Jorge", fecha_limite: 2026-06-03],
+        tarea: "Revisión de estilos" [prioridad: BAJA, responsable: "Pedro", fecha_limite: 2026-06@05],
+        tarea: 123 [prioridad: MEDIA, responsable: "Carlos", fecha_limite: 2026-06-07],
+        tarea: "Ajustes de rendimiento" [prioridad: BAJA, responsable: "María", fecha_limite: 2026-06-08],
+    };
+
+    COLUMNA "Completado" {
+        tarea: "Configurar entorno" [prioridad: BAJA, responsable: "Luis", fecha_limite: 2026-04-10],
+        tarea: "Instalar dependencias" [prioridad: BAJA responsable: "Ana", fecha_limite: 2026-04-12],
+        tarea: "Crear repositorio" [prioridad: MEDIA, responsable: "Jorge", fecha_limite: 2026-04-05],
+        tarea: "Planificación inicial" [prioridad: BAJA, responsable: "Pedro", fecha_limite: 2026-04-01],
+    };
+
 };
