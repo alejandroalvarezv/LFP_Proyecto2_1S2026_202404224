@@ -1,0 +1,28 @@
+# Archivos de compilación
+build/
+CMakeFiles/
+*.o
+*.obj
+*.exe
+*.dll
+
+# Qt
+*.pro.user
+*.qbs.user
+moc_*
+ui_*
+qrc_*
+*.autosave
+
+# CMake
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Reportes generados
+TaskScript_Reportes/
+
+# IDE
+.vscode/
+.idea/
+*.swp
