@@ -25,12 +25,12 @@ void MainWindow::setupUI() {
 
     QHBoxLayout* btnLayout = new QHBoxLayout();
 
-    btnCargar   = new QPushButton("📂 Cargar Archivo .task");
-    btnAnalizar = new QPushButton("▶ Analizar");
-    btnReporte1 = new QPushButton("📋 Tablero Kanban");
-    btnReporte2 = new QPushButton("👤 Carga Responsable");
-    btnReporte3 = new QPushButton("🔤 Tokens y Errores");
-    btnGraphviz = new QPushButton("🌳 Arbol Graphviz");
+    btnCargar   = new QPushButton("Cargar Archivo .task");
+    btnAnalizar = new QPushButton("Analizar");
+    btnReporte1 = new QPushButton("Tablero Kanban");
+    btnReporte2 = new QPushButton("Carga Responsable");
+    btnReporte3 = new QPushButton("Tokens y Errores");
+    btnGraphviz = new QPushButton("Arbol Graphviz");
 
     btnAnalizar->setEnabled(false);
     btnReporte1->setEnabled(false);
@@ -103,7 +103,7 @@ void MainWindow::setupTablaTokens() {
     tablaTokens->horizontalHeader()->setStretchLastSection(true);
     tablaTokens->setEditTriggers(QAbstractItemView::NoEditTriggers);
     tablaTokens->setAlternatingRowColors(true);
-    tabWidget->addTab(tablaTokens, "🔤 Tokens");
+    tabWidget->addTab(tablaTokens, "Tokens");
 }
 
 void MainWindow::setupTablaErrores() {
@@ -113,7 +113,7 @@ void MainWindow::setupTablaErrores() {
     tablaErrores->horizontalHeader()->setStretchLastSection(true);
     tablaErrores->setEditTriggers(QAbstractItemView::NoEditTriggers);
     tablaErrores->setAlternatingRowColors(true);
-    tabWidget->addTab(tablaErrores, "⚠ Errores");
+    tabWidget->addTab(tablaErrores, "Errores");
 }
 
 void MainWindow::cargarArchivo() {
@@ -159,15 +159,12 @@ void MainWindow::analizarArchivo() {
     llenarTablaTokens(tokens);
     llenarTablaErrores(errorManager);
 
-    // Generar reportes
-    // Generar reportes
+
     ReportGenerator generator(parser.getTablero(), tokens, errorManager, parser.getArbol());
 
-    // Reporte 3 siempre se genera
     generator.generarReporte3((outputDir + "reporte3_tokens.html").toStdString());
     btnReporte3->setEnabled(true);
 
-    // Reportes 1, 2 y Graphviz solo si no hay errores
     if (!errorManager.hayErrores()) {
         generator.generarReporte1((outputDir + "reporte1_kanban.html").toStdString());
         generator.generarReporte2((outputDir + "reporte2_responsable.html").toStdString());
@@ -243,7 +240,6 @@ void MainWindow::llenarTablaErrores(const ErrorManager& em) {
         tablaErrores->setItem(row, 4, new QTableWidgetItem(QString::number(err.linea)));
         tablaErrores->setItem(row, 5, new QTableWidgetItem(QString::number(err.columna)));
 
-        // Color rojo para errores
         for (int col = 0; col < 6; col++)
             tablaErrores->item(row, col)->setForeground(QColor("#e74c3c"));
         row++;

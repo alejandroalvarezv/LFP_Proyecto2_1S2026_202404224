@@ -14,7 +14,6 @@ enum class TokenType {
     DOS_PUNTOS,
     COMA,
     PUNTO_COMA,
-    // Especiales
     FIN_ARCHIVO,
     ERROR_TOKEN
 };

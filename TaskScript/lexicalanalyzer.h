@@ -32,4 +32,4 @@ private:
     bool isDateFormat(const std::string& text);
 };
 
-#endif // LEXICALANALYZER_H
+#endif

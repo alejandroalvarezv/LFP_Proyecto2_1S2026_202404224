@@ -40,7 +40,6 @@ std::string ReportGenerator::tokenTypeToString(TokenType type) {
     }
 }
 
-// ── Helper para escapar comillas en etiquetas Graphviz ──
 std::string escaparLabel(const std::string& texto) {
     std::string resultado = "";
     for (char c : texto) {

@@ -11,7 +11,6 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QSplitter>
-
 #include "lexicalanalyzer.h"
 #include "syntaxanalyzer.h"
 #include "errormanager.h"
@@ -65,4 +64,4 @@ private:
     void setEstado(const QString& msg, const QString& color);
 };
 
-#endif // MAINWINDOW_H
+#endif

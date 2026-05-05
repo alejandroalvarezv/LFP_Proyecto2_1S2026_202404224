@@ -35,4 +35,4 @@ private:
     int contador;
 };
 
-#endif // ERRORMANAGER_H
+#endif

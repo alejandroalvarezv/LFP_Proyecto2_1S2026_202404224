@@ -34,7 +34,6 @@ Token SyntaxAnalyzer::consume(TokenType expected, const std::string& descripcion
     return t;
 }
 
-// <programa> ::= TABLERO CADENA "{" <columnas> "}" ";"
 NodoArbol* SyntaxAnalyzer::parsePrograma() {
     NodoArbol* nodo = new NodoArbol("<programa>");
 
@@ -47,26 +46,21 @@ NodoArbol* SyntaxAnalyzer::parsePrograma() {
     tablero.nombre = nombre.lexema;
     nodo->hijos.push_back(new NodoArbol("\"" + nombre.lexema + "\"", true));
 
-    // {
     consume(TokenType::LLAVE_ABRE, "Se esperaba '{'");
     nodo->hijos.push_back(new NodoArbol("{", true));
 
-    // <columnas>
     NodoArbol* columnas = parseColumnas();
     nodo->hijos.push_back(columnas);
 
-    // }
     consume(TokenType::LLAVE_CIERRA, "Se esperaba '}'");
     nodo->hijos.push_back(new NodoArbol("}", true));
 
-    // ;
     consume(TokenType::PUNTO_COMA, "Se esperaba ';'");
     nodo->hijos.push_back(new NodoArbol(";", true));
 
     return nodo;
 }
 
-// <columnas> ::= <columna> <columnas> | <columna>
 NodoArbol* SyntaxAnalyzer::parseColumnas() {
     NodoArbol* nodo = new NodoArbol("<columnas>");
 
@@ -80,39 +74,32 @@ NodoArbol* SyntaxAnalyzer::parseColumnas() {
     return nodo;
 }
 
-// <columna> ::= COLUMNA CADENA "{" <tareas> "}" ";"
 NodoArbol* SyntaxAnalyzer::parseColumna(Columna& columna) {
     NodoArbol* nodo = new NodoArbol("<columna>");
 
-    // COLUMNA
     consume(TokenType::COLUMNA, "Se esperaba 'COLUMNA'");
     nodo->hijos.push_back(new NodoArbol("COLUMNA", true));
 
-    // CADENA (nombre columna)
     Token nombre = consume(TokenType::CADENA, "Se esperaba el nombre de la columna");
     columna.nombre = nombre.lexema;
     nodo->hijos.push_back(new NodoArbol("\"" + nombre.lexema + "\"", true));
 
-    // {
     consume(TokenType::LLAVE_ABRE, "Se esperaba '{'");
     nodo->hijos.push_back(new NodoArbol("{", true));
 
-    // <tareas>
     NodoArbol* tareas = parseTareas(columna.tareas);
     nodo->hijos.push_back(tareas);
 
-    // }
     consume(TokenType::LLAVE_CIERRA, "Se esperaba '}'");
     nodo->hijos.push_back(new NodoArbol("}", true));
 
-    // ;
+
     consume(TokenType::PUNTO_COMA, "Se esperaba ';'");
     nodo->hijos.push_back(new NodoArbol(";", true));
 
     return nodo;
 }
 
-// <tareas> ::= <tarea> "," <tareas> | <tarea>
 NodoArbol* SyntaxAnalyzer::parseTareas(std::vector<Tarea>& tareas) {
     NodoArbol* nodo = new NodoArbol("<tareas>");
 
@@ -131,39 +118,31 @@ NodoArbol* SyntaxAnalyzer::parseTareas(std::vector<Tarea>& tareas) {
     return nodo;
 }
 
-// <tarea> ::= tarea ":" CADENA "[" <atributos> "]"
 NodoArbol* SyntaxAnalyzer::parseTarea(Tarea& tarea) {
     NodoArbol* nodo = new NodoArbol("<tarea>");
 
-    // tarea
     consume(TokenType::TAREA, "Se esperaba 'tarea'");
     nodo->hijos.push_back(new NodoArbol("tarea", true));
 
-    // :
     consume(TokenType::DOS_PUNTOS, "Se esperaba ':' despues de 'tarea'");
     nodo->hijos.push_back(new NodoArbol(":", true));
 
-    // CADENA (nombre tarea)
     Token nombre = consume(TokenType::CADENA, "Se esperaba el nombre de la tarea");
     tarea.nombre = nombre.lexema;
     nodo->hijos.push_back(new NodoArbol("\"" + nombre.lexema + "\"", true));
 
-    // [
     consume(TokenType::CORCHETE_ABRE, "Se esperaba '['");
     nodo->hijos.push_back(new NodoArbol("[", true));
 
-    // <atributos>
     NodoArbol* atributos = parseAtributos(tarea.atributos);
     nodo->hijos.push_back(atributos);
 
-    // ]
     consume(TokenType::CORCHETE_CIERRA, "Se esperaba ']'");
     nodo->hijos.push_back(new NodoArbol("]", true));
 
     return nodo;
 }
 
-// <atributos> ::= <atributo> "," <atributos> | <atributo>
 NodoArbol* SyntaxAnalyzer::parseAtributos(Atributo& atributo) {
     NodoArbol* nodo = new NodoArbol("<atributos>");
 
@@ -216,7 +195,6 @@ NodoArbol* SyntaxAnalyzer::parseAtributo(Atributo& atributo) {
     return nodo;
 }
 
-// <prioridad> ::= ALTA | MEDIA | BAJA
 NodoArbol* SyntaxAnalyzer::parsePrioridad(std::string& prioridad) {
     NodoArbol* nodo = new NodoArbol("<prioridad>");
 

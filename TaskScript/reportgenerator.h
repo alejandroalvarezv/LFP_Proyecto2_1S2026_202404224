@@ -30,4 +30,4 @@ private:
     void generarNodosGraphviz(NodoArbol* nodo, int& contador, std::string& resultado);
 };
 
-#endif // REPORTGENERATOR_H
+#endif

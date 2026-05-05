@@ -59,7 +59,7 @@ bool LexicalAnalyzer::isDateFormat(const std::string& text) {
 Token LexicalAnalyzer::readString() {
     int startLine = linea, startCol = columna;
     std::string result = "";
-    advance(); // saltar la comilla inicial "
+    advance();
 
     while (pos < (int)source.size() && currentChar() != '"') {
         if (currentChar() == '\n') {
@@ -92,7 +92,6 @@ Token LexicalAnalyzer::readNumberOrDate() {
         advance();
     }
 
-    // Tiene estructura de fecha AAAA-MM-DD
     if (result.size() == 10 && result[4] == '-' && result[7] == '-') {
         if (isDateFormat(result)) {
             return Token(TokenType::FECHA, result, startLine, startCol);

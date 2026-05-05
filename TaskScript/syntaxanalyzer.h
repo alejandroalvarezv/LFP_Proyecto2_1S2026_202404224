@@ -74,4 +74,4 @@ private:
     NodoArbol* parsePrioridad(std::string& prioridad);
 };
 
-#endif // SYNTAXANALYZER_H
+#endif
